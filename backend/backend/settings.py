@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-yrv4r78o8j!*+0vw)v!1z_=lim@6^ya1_*vekbh4i)&t_in74q
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'account.CustomUser'
 
 
 # Application definition
@@ -56,7 +57,7 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        'rest_framework.permissions.AllowAny'
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
